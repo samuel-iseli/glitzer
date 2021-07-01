@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+/************************************************
+ Stylesheet: Gutenberg (im Backend)
+ (reload Fromtend to write CSS-File)
+ TODO: variablen einfügen
+ *************************************************/
+/******************************************************************
+ Stylesheet: Mixins & Constants Stylesheet
+ This is where you can take advantage of Sass' great features:
+ Mixins & Constants.
+ ******************************************************************/
+/*********************
+ TOOLS
+ *********************/
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/*********************
+ COLORS
+ *********************/
+/*
+ element {
+ @include background-opacity(#333, 0.5);
+ }
+ */
+/*
+ .fade {
+ @include opacity(.4);
+ }
+ */
+/*********************
+ TYPOGRAPHY
+ *********************/
+/*
+ @include font-face("MyFont", "path/to/MyFont", $style: normal, $weight: normal)
+ */
+/* rem Umwandlung */
+/*
+ .demo {
+ font-size: rem(24px); // Simple
+ padding: rem(5px 10px); // Multiple values
+ border-bottom: rem(1px solid black); // Multiple mixed values
+ box-shadow: rem(0 0 2px #ccc, inset 0 0 5px #eee); // Comma-separated values
+ text-shadow: rem(1px 1px) #eee, rem(-1px) 0 #eee; // Alternate use
+ }
+ */
+/* breakpoints */
+/*
+ .sidebar {
+ width: 60%;
+ float: left;
+ margin: 0 2% 0 0;
+ @include bp-small {
+ width: 100%;
+ float: none;
+ margin: 0;
+ }
+ }	
+ */
+/*********************
+ CSS3 GRADIENTS.
+ *********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/* order radius */
+/* list reset*/
+/*********************
+ Centering
+ *********************/
+/*
+ .parent {
+ position: relative;
+ }
+ .child {
+ @include centerer;
+ } 
+ */
+/*--------------------------------------------------------------*/
+/* All SASS Variables */
+/*--------------------------------------------------------------*/
+/*** Colors ***/
+/*** Fonts ***/
+/*
+ $mainFont:
+ $boldFont: 
+ */
+/*** Margin-Padding ***/
+.editor-block-list__layout .editor-block-list__block .editor-block-drop-zone {
+  bottom: -3px;
+  margin: 0 14px;
+  top: -4px;
+}
+/* Width of the editor column */
+body.gutenberg-editor-page .edit-post-visual-editor, body.gutenberg-editor-page .editor-post-title__block, body.gutenberg-editor-page .editor-default-block-appender, body.gutenberg-editor-page .editor-block-list__block {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1128px !important;
+  /* width of page (1100px) plus 2 x 14px margin */
+}
+/* Set left margin for post text editor only to 20px, no right margin */
+body.gutenberg-editor-page .edit-post-text-editor {
+  margin-left: 20px;
+  margin-right: 0;
+}
+/* Width of "wide" blocks */
+body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
+  max-width: 1400px;
+}
+/* Width of "full-width" blocks */
+body.gutenberg-editor-page .editor-block-list__block[data-align="full"] {
+  max-width: none;
+}
+/* Style overall content */
+.editor-block-list__layout .editor-block-list__block, .editor-block-list__layout .editor-block-list__block p {
+  color: #3a3a3a;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+}
+/* Style links */
+.editor-block-list__layout a {
+  color: #1e73be;
+}
+.editor-block-list__layout a:hover {
+  color: #639dd3;
+}
+.editor-post-title__block .editor-post-title__input {
+  font-family: "Open Sans", sans-serif;
+  /* font family of the post title */
+}
+.editor-post-title__block .editor-post-title__input, .editor-block-list__layout .editor-block-list__block h1 {
+  color: #3a3a3a;
+  font-size: 34px;
+  font-weight: 300;
+}
+.editor-block-list__layout .editor-block-list__block h2 {
+  color: #555;
+  font-size: 28px;
+  font-weight: 300;
+}
+.editor-block-list__layout .editor-block-list__block h3 {
+  color: #666;
+  font-size: 24px;
+  font-weight: 300;
+}
+.editor-block-list__layout .editor-block-list__block h4 {
+  color: #888;
+  font-size: 22px;
+  font-weight: 300;
+}
+/* Style code and code blocks font size and line height */
+.wp-block-code .editor-plain-text {
+  font-size: 18px;
+  line-height: 1.4;
+}
+/* Style keyboard strokes to resemble keyboard keys */
+.editor-block-list__layout kbd {
+  background: #eaeaea;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 0.1em;
+  padding: 0.25em;
+}
+/* Style block quote block */
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-left: 5px solid rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  padding: 20px;
+}
+/* Style block quote citation text */
+.wp-block-quote__citation {
+  color: #777;
+  display: block;
+  font-size: 14px;
+  font-style: italic;
+}

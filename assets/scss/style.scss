@@ -1,0 +1,251 @@
+/************************************************
+
+Stylesheet: Global Stylesheet
+
+*************************************************/
+
+@import 'mixins';
+@import 'variables';
+//@import 'comments';
+//@import 'slick';
+
+
+/*--------------------------------------------------------------*/
+/* Layout */
+/*--------------------------------------------------------------*/
+
+body {
+	background: $weiss;
+	font-family: $mainFont;
+}
+
+
+/*********************
+HEADER
+*********************/
+.header {
+  
+}
+
+
+/*********************
+NAVIGATION
+*********************/
+
+.menu {
+  li {
+    a {
+      
+    }
+    &.active {
+      
+    }
+  }
+}
+
+
+
+/*********************
+TYPOGRAFIE
+*********************/
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $mainFont;
+}
+
+h1 {
+	font-size: rem(50px);
+}
+h2 {
+	font-size: rem(34px);
+	color: $black;
+}
+h3 {
+	font-size: rem(24px);
+	color: $black;
+}
+p {
+	margin-bottom: rem(20px);
+}
+
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+ 
+#{$a-tags} {
+  color: $black;
+  text-decoration: none;
+}
+#{$a-tags-hover} {
+  color: $black;
+}
+
+/*
+.linkIcon {
+	&:before{
+		margin-right: 5px;
+	  -webkit-font-smoothing: antialiased;     
+	  font-family: "Font Awesome 5 Pro";
+	  font-weight: 300; 		
+	}
+  &.type_xlsx:before, &.type_xls:before{
+	  content: "\f1c3";
+  }
+  &.type_docx:before, &.type_doc:before{
+	  content: "\f1c2";
+  }
+  &.type_pdf:before{
+	  content: "\f1c1";
+  }
+  &.type_email:before{
+	  content: "\f0e0";
+  }
+  &.type_external:before{
+	  content: "\f08e";
+  }
+}
+*/
+
+
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar li {
+  list-style: none; }
+
+.widget ul {
+  margin: 0; }
+
+/*********************
+BLOCKS
+*********************/
+
+
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
+
+}
+
+.to-top {
+    background-color: rgba(255, 255, 255, 0.75); 
+    display: none;
+    z-index: 999;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+.page-title .vcard {
+  border: 0px;
+  padding: 0px; }
+
+.byline {
+  color: #999; }
+
+.entry-content img {
+  max-width: 100%;
+  height: auto; }
+
+.entry-content .alignleft, .entry-content img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left; }
+
+.entry-content .alignright, .entry-content img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right; }
+
+.entry-content .aligncenter, .entry-content img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both; }
+
+.entry-content video, .entry-content object {
+  max-width: 100%;
+  height: auto; }
+
+.entry-content pre {
+  background: #eee;
+  border: 1px solid #cecece;
+  padding: 10px; }
+
+.wp-caption {
+  max-width: 100%;
+  background: #eee;
+  padding: 5px; }
+  .wp-caption img {
+    max-width: 100%;
+    margin-bottom: 0;
+    width: 100%; }
+  .wp-caption p.wp-caption-text {
+    font-size: 0.85em;
+    margin: 4px 0 7px;
+    text-align: center; }
+
+.post-password-form input[type="submit"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  font-family: inherit;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: #1779ba;
+  color: #fefefe; }
+  [data-whatinput='mouse'] .post-password-form input[type="submit"] {
+    outline: 0; }
+  .post-password-form input[type="submit"]:hover, .post-password-form input[type="submit"]:focus {
+    background-color: #14679e;
+    color: #fefefe; }
+
+
+
+/*********************
+PLUGIN STYLES
+*********************/
+// Maps
+// siehe auch: https://blog.kulturbanause.de/2014/08/static-google-maps-responsive-design/
+
+.mapWrap {
+  position: relative;
+  padding-bottom: 56%;
+  height: 0;
+  overflow: hidden;
+}
+
+.mapWrap iframe,
+.mapWrap object,
+.mapWrap embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;	
+}
+
+
+
+/*# sourceMappingURL=style.css.map */
