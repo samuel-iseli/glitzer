@@ -54,12 +54,21 @@ add_filter('upload_mimes', 'cc_mime_types');
 
 /** Remove colors and font-size in Backend **/
 // Disable colors
-add_theme_support( 'editor-color-palette' );
 add_theme_support( 'disable-custom-colors' );
+add_theme_support( 'editor-color-palette' );
+add_theme_support( 'editor-gradient-presets', [] );
+add_theme_support( 'disable-custom-gradients' );
 
 //Disable font sizes
 add_theme_support( 'editor-font-sizes', [] );
 add_theme_support( 'disable-custom-font-sizes' );
+
+// remove initial Buchstabe
+function disable_drop_cap_editor_settings_5_7(array $editor_settings): array {
+  $editor_settings['__experimentalFeatures']['defaults']['typography']['dropCap'] = false;
+  return $editor_settings;
+}
+add_filter('block_editor_settings', 'disable_drop_cap_editor_settings_5_7');
 
 /** Remove Block Styles in Editor (adds JS-File) **/
 // https://soderlind.no/hide-block-styles-in-gutenberg/
@@ -68,7 +77,7 @@ add_action( 'init', 'remove_block_style' );
 
 function remove_block_style() {
   // Register the block editor script.
-  wp_register_script( 'remove-block-style', get_stylesheet_directory_uri() . 'assets/scripts/remove-block-styles.js', [ 'wp-blocks', 'wp-edit-post' ] );
+  wp_register_script( 'remove-block-style', get_stylesheet_directory_uri() . '/assets/scripts/remove-block-styles.js', [ 'wp-blocks', 'wp-edit-post' ] );
   // register block editor script.
   register_block_type( 'remove/block-style', [
     'editor_script' => 'remove-block-style',
