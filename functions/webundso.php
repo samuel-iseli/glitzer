@@ -83,3 +83,12 @@ function remove_block_style() {
     'editor_script' => 'remove-block-style',
   ] );
 }
+
+/** ACF JSON **/
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+ 
+function my_acf_json_save_point( $path ) {  
+  $path = get_stylesheet_directory() . '/assets/acf-json';
+  return $path;
+    
+}
