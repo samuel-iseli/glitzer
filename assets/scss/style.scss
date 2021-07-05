@@ -109,6 +109,16 @@ $a-tags-hover: 'a:active, a:hover';
 }
 */
 
+// Silbentrennung
+h1, h2, h3, h4, h5, h6, p, ul li {
+  -webkit-hyphens: auto;
+  -webkit-hyphenate-limit-chars: auto 3;
+  -webkit-hyphenate-limit-lines: 4;
+  -ms-hyphens: auto;
+  -ms-hyphenate-limit-chars: auto 3;
+  -ms-hyphenate-limit-lines: 4;
+  hyphens: auto;
+}
 
 /*********************
 SIDEBARS & ASIDES
