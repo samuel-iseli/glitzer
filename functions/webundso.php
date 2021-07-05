@@ -77,7 +77,7 @@ add_action( 'init', 'remove_block_style' );
 
 function remove_block_style() {
   // Register the block editor script.
-  wp_register_script( 'remove-block-style', get_stylesheet_directory_uri() . '/assets/scripts/remove-block-styles.js', [ 'wp-blocks', 'wp-edit-post' ] );
+  wp_register_script( 'remove-block-style', get_stylesheet_directory_uri() . '/assets/scripts/editor-functions.js', [ 'wp-blocks', 'wp-edit-post' ] );
   // register block editor script.
   register_block_type( 'remove/block-style', [
     'editor_script' => 'remove-block-style',
