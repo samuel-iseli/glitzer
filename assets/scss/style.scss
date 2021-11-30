@@ -6,8 +6,8 @@ Stylesheet: Global Stylesheet
 
 @import 'mixins';
 @import 'variables';
-//@import 'comments';
 //@import 'slick';
+//@import 'comments';
 
 /*--------------------------------------------------------------*/
 /* Global */
@@ -21,6 +21,7 @@ Stylesheet: Global Stylesheet
 body {
 	background: $weiss;
 	font-family: $mainFont;
+  color: $black;
 }
 
 

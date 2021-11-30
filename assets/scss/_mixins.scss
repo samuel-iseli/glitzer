@@ -6,13 +6,7 @@
 TOOLS
 *********************/
 
-// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
-.image-replacement {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-// Border for element position
+/** Border for element position **/
 @mixin dev-border($color:red) {
   border: 1px solid $color;
 }
@@ -23,8 +17,8 @@ COLORS
 *********************/
 
 @mixin background-opacity($color, $opacity: 0.3) {
-    background: $color; /* The Fallback */
-    background: rgba($color, $opacity);
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
 }
 // @include background-opacity(#333, 0.5);
 
@@ -34,7 +28,6 @@ COLORS
   filter: alpha(opacity = $opacity-ie); //IE8
 }
 // @include opacity(.4);
-
 
 /*********************
 FONTS
@@ -64,18 +57,15 @@ $rem-px-only: false !default;
 @function rem-separator($list, $separator: false) {
   @if $separator == "comma" or $separator == "space" {
     @return append($list, null, $separator);
-  } 
-  
+  }   
   @if function-exists("list-separator") == true {
     @return list-separator($list);
   }
-
   // list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
   $test-list: ();
   @each $item in $list {
     $test-list: append($test-list, $item, space);
   }
-
   @return if($test-list == $list, space, comma);
 }
 
@@ -139,10 +129,10 @@ $rem-px-only: false !default;
 }
 */
 
-
 /*********************
  BREAKPOINTS (LIKE FOUNDATION)
 *********************/
+
 @mixin bp-large {
   @media only screen and (max-width: 74.9375em) {
     @content;
@@ -224,18 +214,19 @@ Border Radius
       -ms-border-radius: $top-left $top-right $bottom-right $bottom-left;
           border-radius: $top-left $top-right $bottom-right $bottom-left;  
 }
-/* @include border-radius(1em);
-/* @include border-radius(25px,5px,25px,5px);
+// @include border-radius(1em);
+// @include border-radius(25px,5px,25px,5px);
 
 /*********************
 BOX SHADOW
 *********************/
+
 @mixin box-shadow($top, $left, $blur, $color, $inset:"") {
   -webkit-box-shadow:$top $left $blur $color #{$inset};
   -moz-box-shadow:$top $left $blur $color #{$inset};
   box-shadow:$top $left $blur $color #{$inset};
 }
-/* @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.5));
+// @include box-shadow(inset 0 1px 1px rgba(0, 0, 0, 0.5));
 
 /*********************
 List reset
@@ -245,11 +236,12 @@ List reset
     margin: 0;
     padding: 0;
 }
-/* @include list-rest;
+// @include list-rest;
 
 /*********************
  Prefix Property
 *********************/
+
 $prefixes: "webkit", "moz", "ms", "o", "none";
 @mixin prefix($property, $arguments) {
  @each $prefix in $prefixes {
@@ -263,27 +255,45 @@ $prefixes: "webkit", "moz", "ms", "o", "none";
 // @include prefix(opacity, 0.7);
 
 /*********************
-Centering
+Centering hor/vert
 *********************/
-@mixin centerer {
+@mixin center($position) {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
 }
 /*
-.parent {
-  position: relative;
-}
-.child {
-  @include centerer;
-} 
+.foo {
+    @include center(both);
+  }
+  .foo-parent {
+    position: relative;
+  }
 */
 
-
 /*********************
-Fluid Typografie //https://css-tricks.com/snippets/css/fluid-typography/
+Fluid Typografie 
+https://css-tricks.com/snippets/css/fluid-typography/
 *********************/
+
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
