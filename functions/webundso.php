@@ -84,6 +84,9 @@ function remove_block_style() {
   ] );
 }
 
+/** Remove Block Patterns **/
+remove_theme_support( 'core-block-patterns' );
+
 /** ACF JSON **/
 add_filter('acf/settings/save_json', 'my_acf_json_save_point');
  

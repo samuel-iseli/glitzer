@@ -12,7 +12,11 @@ TOOLS
 	white-space: nowrap;
 	overflow: hidden;
 }
-
+// Border for element position
+@mixin dev-border($color:red) {
+  border: 1px solid $color;
+}
+// @include dev-border;
 
 /*********************
 COLORS
