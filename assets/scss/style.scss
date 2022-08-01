@@ -49,6 +49,33 @@ NAVIGATION
 }
 
 
+/*********************
+FOOTER STYLES
+*********************/
+.footer {
+
+}
+
+.to-top {
+    background-color: rgba(255, 255, 255, 0.75); 
+    display: none;
+    z-index: 999;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+
 
 /*********************
 TYPOGRAFIE
@@ -124,117 +151,12 @@ h1, h2, h3, h4, h5, h6, p, ul li {
 /*********************
 SIDEBARS & ASIDES
 *********************/
-.sidebar li {
-  list-style: none; }
 
-.widget ul {
-  margin: 0; }
 
 /*********************
 BLOCKS
 *********************/
 
-
-/*********************
-FOOTER STYLES
-*********************/
-.footer {
-
-}
-
-.to-top {
-    background-color: rgba(255, 255, 255, 0.75); 
-    display: none;
-    z-index: 999;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 50px;
-    height: 50px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; 
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-}
-
-
-/*********************
-POSTS & CONTENT STYLES
-*********************/
-.page-title .vcard {
-  border: 0px;
-  padding: 0px; }
-
-.byline {
-  color: #999; }
-
-.entry-content img {
-  max-width: 100%;
-  height: auto; }
-
-.entry-content .alignleft, .entry-content img.alignleft {
-  margin-right: 1.5em;
-  display: inline;
-  float: left; }
-
-.entry-content .alignright, .entry-content img.alignright {
-  margin-left: 1.5em;
-  display: inline;
-  float: right; }
-
-.entry-content .aligncenter, .entry-content img.aligncenter {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  clear: both; }
-
-.entry-content video, .entry-content object {
-  max-width: 100%;
-  height: auto; }
-
-.entry-content pre {
-  background: #eee;
-  border: 1px solid #cecece;
-  padding: 10px; }
-
-.wp-caption {
-  max-width: 100%;
-  background: #eee;
-  padding: 5px; }
-  .wp-caption img {
-    max-width: 100%;
-    margin-bottom: 0;
-    width: 100%; }
-  .wp-caption p.wp-caption-text {
-    font-size: 0.85em;
-    margin: 4px 0 7px;
-    text-align: center; }
-
-.post-password-form input[type="submit"] {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 0 1rem 0;
-  font-family: inherit;
-  padding: 0.85em 1em;
-  -webkit-appearance: none;
-  border: 1px solid transparent;
-  border-radius: 0;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  font-size: 0.9rem;
-  line-height: 1;
-  text-align: center;
-  cursor: pointer;
-  background-color: #1779ba;
-  color: #fefefe; }
-  [data-whatinput='mouse'] .post-password-form input[type="submit"] {
-    outline: 0; }
-  .post-password-form input[type="submit"]:hover, .post-password-form input[type="submit"]:focus {
-    background-color: #14679e;
-    color: #fefefe; }
 
 
 
