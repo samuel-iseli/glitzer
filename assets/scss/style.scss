@@ -234,6 +234,10 @@ h3 {
 	font-size: rem(24px);
 	color: $gold;
 }
+h4 {
+  font-size: rem(24px);
+  color: $weiss;
+}
 p {
 	margin-bottom: rem(20px);
   @include bp-small {
