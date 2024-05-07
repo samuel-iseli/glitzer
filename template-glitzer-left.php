@@ -6,10 +6,10 @@ Template Name: Glitzer Left
 get_header(); ?>		
 	<style>
        #glitzer-left {
-		height: 1200px;
+		height: 1300px;
 		background-image:url(/wp-content/uploads/2023/04/Glitzer-Effekt-Hintergrund_detail_2.png);			
 		background-repeat:no-repeat;
-		background-position-y: 700px;
+		background-position-y: 800px;
 	}
 	</style>
 	<div class="content">
