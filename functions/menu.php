@@ -3,6 +3,7 @@
 register_nav_menus(
 	array(
 		'main-nav'		=> __( 'The Main Menu', 'jointswp' ),		// Main nav in header
+		'mob-nav'		=> __( 'Mobile Menu', 'jointswp' ),		// Main nav in header
 		'offcanvas-nav'	=> __( 'The Off-Canvas Menu', 'jointswp' ),	// Off-Canvas nav
 		'footer-links'	=> __( 'Footer Links', 'jointswp' )			// Secondary nav in footer
 	)
@@ -16,6 +17,19 @@ function joints_top_nav() {
 		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
 		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown">%3$s</ul>',
 		'theme_location'	=> 'main-nav',					// Where it's located in the theme
+		'depth'				=> 5,							// Limit the depth of the nav
+		'fallback_cb'		=> false,						// Fallback function (see below)
+		'walker'			=> new Topbar_Menu_Walker()
+	));
+}
+// The Top Menu
+function joints_mob_nav() {
+	wp_nav_menu(array(
+		'container'			=> false,						// Remove nav container
+		'menu_id'			=> 'main-nav',					// Adding custom nav id
+		'menu_class'		=> 'medium-horizontal menu',	// Adding custom nav class
+		'items_wrap'		=> '<ul id="%1$s" class="%2$s" data-responsive-menu="accordion medium-dropdown">%3$s</ul>',
+		'theme_location'	=> 'mob-nav',					// Where it's located in the theme
 		'depth'				=> 5,							// Limit the depth of the nav
 		'fallback_cb'		=> false,						// Fallback function (see below)
 		'walker'			=> new Topbar_Menu_Walker()

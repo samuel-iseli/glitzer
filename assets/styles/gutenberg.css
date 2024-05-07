@@ -1,177 +1,552 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 /************************************************
- Stylesheet: Gutenberg (im Backend)
- (reload Fromtend to write CSS-File)
- TODO: variablen einfügen
- *************************************************/
-/******************************************************************
- Stylesheet: Mixins & Constants Stylesheet
- This is where you can take advantage of Sass' great features:
- Mixins & Constants.
- ******************************************************************/
+
+Stylesheet: Gutenberg (im Backend)
+(reload Frontend to write CSS-File)
+
+*************************************************/
+/******************************************************************/
+/* Stylesheet: Mixins & Constants Stylesheet*/
+/******************************************************************/
 /*********************
- TOOLS
- *********************/
-.image-replacement {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+TOOLS
+*********************/
+/** Border for element position **/
+/*********************
+COLORS
+*********************/
+/*********************
+FONTS
+*********************/
+/*********************
+REM UMWANDLUNG
+*********************/
+/*
+.demo {
+  font-size: rem(24px); // Simple
+  padding: rem(5px 10px); // Multiple values
+  border-bottom: rem(1px solid black); // Multiple mixed values
+  box-shadow: rem(0 0 2px #ccc, inset 0 0 5px #eee); // Comma-separated values
+  text-shadow: rem(1px 1px) #eee, rem(-1px) 0 #eee; // Alternate use
+}
+*/
+/*********************
+ BREAKPOINTS (LIKE FOUNDATION)
+*********************/
+/*
+.sidebar {
+  width: 60%;
+  float: left;
+  margin: 0 2% 0 0;
+  @include bp-small {
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+}	
+*/
+/*********************
+Margin/Padding
+*********************/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+.m0 {
+  margin: 0px;
+}
+.p0 {
+  padding: 0px;
+}
+.mt0 {
+  margin-top: 0px;
+}
+.pt0 {
+  padding-top: 0px;
+}
+.mb0 {
+  margin-bottom: 0px;
+}
+.pb0 {
+  padding-bottom: 0px;
+}
+.ml0 {
+  margin-left: 0px;
+}
+.pl0 {
+  padding-left: 0px;
+}
+.mr0 {
+  margin-right: 0px;
+}
+.pr0 {
+  padding-right: 0px;
+}
+.m5 {
+  margin: 5px;
+}
+.p5 {
+  padding: 5px;
+}
+.mt5 {
+  margin-top: 5px;
+}
+.pt5 {
+  padding-top: 5px;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.pb5 {
+  padding-bottom: 5px;
+}
+.ml5 {
+  margin-left: 5px;
+}
+.pl5 {
+  padding-left: 5px;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.pr5 {
+  padding-right: 5px;
+}
+.m10 {
+  margin: 10px;
+}
+.p10 {
+  padding: 10px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.pt10 {
+  padding-top: 10px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.pb10 {
+  padding-bottom: 10px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.pl10 {
+  padding-left: 10px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.pr10 {
+  padding-right: 10px;
+}
+.m15 {
+  margin: 15px;
+}
+.p15 {
+  padding: 15px;
+}
+.mt15 {
+  margin-top: 15px;
+}
+.pt15 {
+  padding-top: 15px;
+}
+.mb15 {
+  margin-bottom: 15px;
+}
+.pb15 {
+  padding-bottom: 15px;
+}
+.ml15 {
+  margin-left: 15px;
+}
+.pl15 {
+  padding-left: 15px;
+}
+.mr15 {
+  margin-right: 15px;
+}
+.pr15 {
+  padding-right: 15px;
+}
+.m20 {
+  margin: 20px;
+}
+.p20 {
+  padding: 20px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.pt20 {
+  padding-top: 20px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.pb20 {
+  padding-bottom: 20px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+.pl20 {
+  padding-left: 20px;
+}
+.mr20 {
+  margin-right: 20px;
+}
+.pr20 {
+  padding-right: 20px;
+}
+.m25 {
+  margin: 25px;
+}
+.p25 {
+  padding: 25px;
+}
+.mt25 {
+  margin-top: 25px;
+}
+.pt25 {
+  padding-top: 25px;
+}
+.mb25 {
+  margin-bottom: 25px;
+}
+.pb25 {
+  padding-bottom: 25px;
+}
+.ml25 {
+  margin-left: 25px;
+}
+.pl25 {
+  padding-left: 25px;
+}
+.mr25 {
+  margin-right: 25px;
+}
+.pr25 {
+  padding-right: 25px;
+}
+.m30 {
+  margin: 30px;
+}
+.p30 {
+  padding: 30px;
+}
+.mt30 {
+  margin-top: 30px;
+}
+.pt30 {
+  padding-top: 30px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.pb30 {
+  padding-bottom: 30px;
+}
+.ml30 {
+  margin-left: 30px;
+}
+.pl30 {
+  padding-left: 30px;
+}
+.mr30 {
+  margin-right: 30px;
+}
+.pr30 {
+  padding-right: 30px;
+}
+.m35 {
+  margin: 35px;
+}
+.p35 {
+  padding: 35px;
+}
+.mt35 {
+  margin-top: 35px;
+}
+.pt35 {
+  padding-top: 35px;
+}
+.mb35 {
+  margin-bottom: 35px;
+}
+.pb35 {
+  padding-bottom: 35px;
+}
+.ml35 {
+  margin-left: 35px;
+}
+.pl35 {
+  padding-left: 35px;
+}
+.mr35 {
+  margin-right: 35px;
+}
+.pr35 {
+  padding-right: 35px;
+}
+.m40 {
+  margin: 40px;
+}
+.p40 {
+  padding: 40px;
+}
+.mt40 {
+  margin-top: 40px;
+}
+.pt40 {
+  padding-top: 40px;
+}
+.mb40 {
+  margin-bottom: 40px;
+}
+.pb40 {
+  padding-bottom: 40px;
+}
+.ml40 {
+  margin-left: 40px;
+}
+.pl40 {
+  padding-left: 40px;
+}
+.mr40 {
+  margin-right: 40px;
+}
+.pr40 {
+  padding-right: 40px;
+}
+.m45 {
+  margin: 45px;
+}
+.p45 {
+  padding: 45px;
+}
+.mt45 {
+  margin-top: 45px;
+}
+.pt45 {
+  padding-top: 45px;
+}
+.mb45 {
+  margin-bottom: 45px;
+}
+.pb45 {
+  padding-bottom: 45px;
+}
+.ml45 {
+  margin-left: 45px;
+}
+.pl45 {
+  padding-left: 45px;
+}
+.mr45 {
+  margin-right: 45px;
+}
+.pr45 {
+  padding-right: 45px;
+}
+.m50 {
+  margin: 50px;
+}
+.p50 {
+  padding: 50px;
+}
+.mt50 {
+  margin-top: 50px;
+}
+.pt50 {
+  padding-top: 50px;
+}
+.mb50 {
+  margin-bottom: 50px;
+}
+.pb50 {
+  padding-bottom: 50px;
+}
+.ml50 {
+  margin-left: 50px;
+}
+.pl50 {
+  padding-left: 50px;
+}
+.mr50 {
+  margin-right: 50px;
+}
+.pr50 {
+  padding-right: 50px;
+}
+.m75 {
+  margin: 75px;
+}
+.p75 {
+  padding: 75px;
+}
+.mt75 {
+  margin-top: 75px;
+}
+.pt75 {
+  padding-top: 75px;
+}
+.mb75 {
+  margin-bottom: 75px;
+}
+.pb75 {
+  padding-bottom: 75px;
+}
+.ml75 {
+  margin-left: 75px;
+}
+.pl75 {
+  padding-left: 75px;
+}
+.mr75 {
+  margin-right: 75px;
+}
+.pr75 {
+  padding-right: 75px;
+}
+.m100 {
+  margin: 100px;
+}
+.p100 {
+  padding: 100px;
+}
+.mt100 {
+  margin-top: 100px;
+}
+.pt100 {
+  padding-top: 100px;
+}
+.mb100 {
+  margin-bottom: 100px;
+}
+.pb100 {
+  padding-bottom: 100px;
+}
+.ml100 {
+  margin-left: 100px;
+}
+.pl100 {
+  padding-left: 100px;
+}
+.mr100 {
+  margin-right: 100px;
+}
+.pr100 {
+  padding-right: 100px;
 }
 /*********************
- COLORS
- *********************/
-/*
- element {
- @include background-opacity(#333, 0.5);
- }
- */
-/*
- .fade {
- @include opacity(.4);
- }
- */
-/*********************
- TYPOGRAPHY
- *********************/
-/*
- @include font-face("MyFont", "path/to/MyFont", $style: normal, $weight: normal)
- */
-/* rem Umwandlung */
-/*
- .demo {
- font-size: rem(24px); // Simple
- padding: rem(5px 10px); // Multiple values
- border-bottom: rem(1px solid black); // Multiple mixed values
- box-shadow: rem(0 0 2px #ccc, inset 0 0 5px #eee); // Comma-separated values
- text-shadow: rem(1px 1px) #eee, rem(-1px) 0 #eee; // Alternate use
- }
- */
-/* breakpoints */
-/*
- .sidebar {
- width: 60%;
- float: left;
- margin: 0 2% 0 0;
- @include bp-small {
- width: 100%;
- float: none;
- margin: 0;
- }
- }	
- */
-/*********************
- CSS3 GRADIENTS.
- *********************/
+CSS3 GRADIENTS
+*********************/
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
-/* order radius */
-/* list reset*/
 /*********************
- Centering
- *********************/
+Border Radius
+*********************/
+/*********************
+BOX SHADOW
+*********************/
+/*********************
+List reset
+*********************/
+/*********************
+ Prefix Property
+*********************/
+/*********************
+Centering hor/vert
+*********************/
 /*
- .parent {
- position: relative;
- }
- .child {
- @include centerer;
- } 
- */
+.foo {
+    @include center(both);
+  }
+  .foo-parent {
+    position: relative;
+  }
+*/
+/*********************
+Fluid Typografie 
+https://css-tricks.com/snippets/css/fluid-typography/
+*********************/
+/*
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+@include fluid-type($min_width, $max_width, $min_font, $max_font);
+*/
 /*--------------------------------------------------------------*/
 /* All SASS Variables */
 /*--------------------------------------------------------------*/
 /*** Colors ***/
+/*** width ***/
 /*** Fonts ***/
 /*
- $mainFont:
- $boldFont: 
- */
-/*** Margin-Padding ***/
-.editor-block-list__layout .editor-block-list__block .editor-block-drop-zone {
-  bottom: -3px;
-  margin: 0 14px;
-  top: -4px;
+$boldFont: 
+*/
+.editor-post-title {
+  font-family: "Noto Serif", serif;
 }
-/* Width of the editor column */
-body.gutenberg-editor-page .edit-post-visual-editor, body.gutenberg-editor-page .editor-post-title__block, body.gutenberg-editor-page .editor-default-block-appender, body.gutenberg-editor-page .editor-block-list__block {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1128px !important;
-  /* width of page (1100px) plus 2 x 14px margin */
+.wp-block {
+  max-width: 1000px;
 }
-/* Set left margin for post text editor only to 20px, no right margin */
-body.gutenberg-editor-page .edit-post-text-editor {
-  margin-left: 20px;
-  margin-right: 0;
+.wp-block.is-selected {
+  background: #e6e3e3;
 }
-/* Width of "wide" blocks */
-body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
-  max-width: 1400px;
+.wp-block[data-align="wide"] {
+  max-width: 1080px;
 }
-/* Width of "full-width" blocks */
-body.gutenberg-editor-page .editor-block-list__block[data-align="full"] {
+.wp-block[data-align="full"] {
   max-width: none;
 }
-/* Style overall content */
-.editor-block-list__layout .editor-block-list__block, .editor-block-list__layout .editor-block-list__block p {
-  color: #3a3a3a;
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
+.editor-styles-wrapper {
+  font-family: "Noto Serif", serif !important;
+  font-size: 1.125rem !important;
+  color: #000000 !important;
 }
-/* Style links */
-.editor-block-list__layout a {
-  color: #1e73be;
+.mt30 {
+  margin: 0;
 }
-.editor-block-list__layout a:hover {
-  color: #639dd3;
+.block-editor-block-list__block {
+  overflow: auto;
 }
-.editor-post-title__block .editor-post-title__input {
-  font-family: "Open Sans", sans-serif;
-  /* font family of the post title */
+/* Titel */
+.editor-styles-wrapper h1, .editor-styles-wrapper h2, .editor-styles-wrapper h3, .editor-styles-wrapper h4 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
-.editor-post-title__block .editor-post-title__input, .editor-block-list__layout .editor-block-list__block h1 {
-  color: #3a3a3a;
-  font-size: 34px;
-  font-weight: 300;
+.wp-block a, .wp-block a:active, .wp-block a:hover, .wp-block a:visited {
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid #000000;
 }
-.editor-block-list__layout .editor-block-list__block h2 {
-  color: #555;
-  font-size: 28px;
-  font-weight: 300;
+.wp-block a:active, .wp-block a:hover {
+  color: #000000;
+  border-bottom: 1px solid #000000;
 }
-.editor-block-list__layout .editor-block-list__block h3 {
-  color: #666;
-  font-size: 24px;
-  font-weight: 300;
+.block-editor-block-list__layout h1, .block-editor-block-list__layout h2, .block-editor-block-list__layout h3, .block-editor-block-list__layout h4, .block-editor-block-list__layout h5, .block-editor-block-list__layout h6 {
+  font-family: "Noto Serif", serif;
 }
-.editor-block-list__layout .editor-block-list__block h4 {
-  color: #888;
-  font-size: 22px;
-  font-weight: 300;
+.block-editor-block-list__layout h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
 }
-/* Style code and code blocks font size and line height */
-.wp-block-code .editor-plain-text {
-  font-size: 18px;
-  line-height: 1.4;
+.block-editor-block-list__layout h2 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin: 30px 0 20px;
 }
-/* Style keyboard strokes to resemble keyboard keys */
-.editor-block-list__layout kbd {
-  background: #eaeaea;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 0 0.1em;
-  padding: 0.25em;
+.block-editor-block-list__layout h3 {
+  font-size: 1.5rem;
+  color: #000000;
 }
-/* Style block quote block */
-.wp-block-quote:not(.is-large):not(.is-style-large) {
-  background-color: rgba(0, 0, 0, 0.03);
-  border-left: 5px solid rgba(0, 0, 0, 0.1);
-  font-style: italic;
-  padding: 20px;
+.wp-block-columns {
+  border: 1px dashed #e6e3e3;
+  padding: 10px;
 }
-/* Style block quote citation text */
-.wp-block-quote__citation {
-  color: #777;
-  display: block;
-  font-size: 14px;
-  font-style: italic;
+.wp-block-columns .wp-block-column {
+  border: 1px dashed #e6e3e3;
 }

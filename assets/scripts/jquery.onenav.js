@@ -13,7 +13,8 @@
  * $('#nav').onePageNav({
  *   currentClass: 'current',
  *   changeHash: false,
- *   scrollSpeed: 750
+ *   scrollSpeed: 750,
+ * 	 scrollOffset: 80
  * });
  */
 
@@ -43,6 +44,7 @@
 			filter: '',
 			scrollSpeed: 750,
 			scrollThreshold: 0.5,
+			scrollOffset: 0,
 			begin: false,
 			end: false,
 			scrollChange: false
@@ -200,10 +202,10 @@
 		},
 
 		scrollTo: function(target, callback) {
-			var offset = $(target).offset().top-this.config.offsetHeight;
+			var offset = $(target).offset().top;
 
 			$('html, body').animate({
-				scrollTop: offset
+				scrollTop: offset - this.config.scrollOffset,
 			}, this.config.scrollSpeed, this.config.easing, callback);
 		},
 

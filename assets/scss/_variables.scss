@@ -5,7 +5,8 @@
 
 /*** Colors ***/
 $weiss: #fff;
-$black: #000;
+$black: #000000;
+$gold: #C5A35B;
 
 
 $trans: transparent;
@@ -15,8 +16,10 @@ $trans: transparent;
 $maxwidth: 1100px;
 
 /*** Fonts ***/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+$mainFont: 'Noto Serif', serif;
 /*
-$mainFont:
 $boldFont: 
 */
 

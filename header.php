@@ -30,8 +30,8 @@
 		<meta name="msapplication-TileColor" content="#2b5797">
 		<meta name="theme-color" content="#ffffff">
 
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+		<meta name="description" content="Glitzer-Effekt, Nadja Schüepp bietet Paarberatungen an, für Beziehungen, die aus dem Gleichgewicht geraten sind. Kommt Ihr nicht mehr weiter bei Beziehungsproblemen? Ein Beratungsgespräch kann helfen, wieder einen wertschätzenden Umgang miteinander zu finden und das Glitzern der Liebe wieder erstrahlen zu lassen." />
+		<meta name="keywords" content="Paarberatung, Beziehungsprobleme" />
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
@@ -41,17 +41,13 @@
 			
 	<body <?php body_class(); ?>>
 
-		<div class="off-canvas-wrapper">
-			
-			<!-- Load off-canvas container. Feel free to remove if not using. -->			
-			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
-			
-			<div class="off-canvas-content" data-off-canvas-content>
 				
 				<header class="header" role="banner">
-							
-					 <!-- This navs will be applied to the topbar, above all content 
-						  To see additional nav styles, visit the /parts directory -->
-					 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
+					<div class="mobileTrigger hide-for-large" id="menuToggle">
+						<span class="top"></span>
+						<span class="middle"></span>
+						<span class="bottom"></span>
+					</div>
+					 <?php get_template_part( 'parts/nav', 'topbar' ); ?>
 	 	
 				</header> <!-- end .header -->

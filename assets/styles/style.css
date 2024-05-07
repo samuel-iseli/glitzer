@@ -1,160 +1,636 @@
 /************************************************
- Stylesheet: Global Stylesheet
- *************************************************/
-/******************************************************************
- Stylesheet: Mixins & Constants Stylesheet
- This is where you can take advantage of Sass' great features:
- Mixins & Constants.
- ******************************************************************/
+
+Stylesheet: Global Stylesheet
+
+*************************************************/
+/******************************************************************/
+/* Stylesheet: Mixins & Constants Stylesheet*/
+/******************************************************************/
 /*********************
- TOOLS
- *********************/
-.image-replacement {
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+TOOLS
+*********************/
+/** Border for element position **/
+/*********************
+COLORS
+*********************/
+/*********************
+FONTS
+*********************/
+/*********************
+REM UMWANDLUNG
+*********************/
+/*
+.demo {
+  font-size: rem(24px); // Simple
+  padding: rem(5px 10px); // Multiple values
+  border-bottom: rem(1px solid black); // Multiple mixed values
+  box-shadow: rem(0 0 2px #ccc, inset 0 0 5px #eee); // Comma-separated values
+  text-shadow: rem(1px 1px) #eee, rem(-1px) 0 #eee; // Alternate use
+}
+*/
+/*********************
+ BREAKPOINTS (LIKE FOUNDATION)
+*********************/
+/*
+.sidebar {
+  width: 60%;
+  float: left;
+  margin: 0 2% 0 0;
+  @include bp-small {
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+}	
+*/
+/*********************
+Margin/Padding
+*********************/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+.m0 {
+  margin: 0px;
+}
+.p0 {
+  padding: 0px;
+}
+.mt0 {
+  margin-top: 0px;
+}
+.pt0 {
+  padding-top: 0px;
+}
+.mb0 {
+  margin-bottom: 0px;
+}
+.pb0 {
+  padding-bottom: 0px;
+}
+.ml0 {
+  margin-left: 0px;
+}
+.pl0 {
+  padding-left: 0px;
+}
+.mr0 {
+  margin-right: 0px;
+}
+.pr0 {
+  padding-right: 0px;
+}
+.m5 {
+  margin: 5px;
+}
+.p5 {
+  padding: 5px;
+}
+.mt5 {
+  margin-top: 5px;
+}
+.pt5 {
+  padding-top: 5px;
+}
+.mb5 {
+  margin-bottom: 5px;
+}
+.pb5 {
+  padding-bottom: 5px;
+}
+.ml5 {
+  margin-left: 5px;
+}
+.pl5 {
+  padding-left: 5px;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.pr5 {
+  padding-right: 5px;
+}
+.m10 {
+  margin: 10px;
+}
+.p10 {
+  padding: 10px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.pt10 {
+  padding-top: 10px;
+}
+.mb10 {
+  margin-bottom: 10px;
+}
+.pb10 {
+  padding-bottom: 10px;
+}
+.ml10 {
+  margin-left: 10px;
+}
+.pl10 {
+  padding-left: 10px;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.pr10 {
+  padding-right: 10px;
+}
+.m15 {
+  margin: 15px;
+}
+.p15 {
+  padding: 15px;
+}
+.mt15 {
+  margin-top: 15px;
+}
+.pt15 {
+  padding-top: 15px;
+}
+.mb15 {
+  margin-bottom: 15px;
+}
+.pb15 {
+  padding-bottom: 15px;
+}
+.ml15 {
+  margin-left: 15px;
+}
+.pl15 {
+  padding-left: 15px;
+}
+.mr15 {
+  margin-right: 15px;
+}
+.pr15 {
+  padding-right: 15px;
+}
+.m20 {
+  margin: 20px;
+}
+.p20 {
+  padding: 20px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.pt20 {
+  padding-top: 20px;
+}
+.mb20 {
+  margin-bottom: 20px;
+}
+.pb20 {
+  padding-bottom: 20px;
+}
+.ml20 {
+  margin-left: 20px;
+}
+.pl20 {
+  padding-left: 20px;
+}
+.mr20 {
+  margin-right: 20px;
+}
+.pr20 {
+  padding-right: 20px;
+}
+.m25 {
+  margin: 25px;
+}
+.p25 {
+  padding: 25px;
+}
+.mt25 {
+  margin-top: 25px;
+}
+.pt25 {
+  padding-top: 25px;
+}
+.mb25 {
+  margin-bottom: 25px;
+}
+.pb25 {
+  padding-bottom: 25px;
+}
+.ml25 {
+  margin-left: 25px;
+}
+.pl25 {
+  padding-left: 25px;
+}
+.mr25 {
+  margin-right: 25px;
+}
+.pr25 {
+  padding-right: 25px;
+}
+.m30 {
+  margin: 30px;
+}
+.p30 {
+  padding: 30px;
+}
+.mt30 {
+  margin-top: 30px;
+}
+.pt30 {
+  padding-top: 30px;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+.pb30 {
+  padding-bottom: 30px;
+}
+.ml30 {
+  margin-left: 30px;
+}
+.pl30 {
+  padding-left: 30px;
+}
+.mr30 {
+  margin-right: 30px;
+}
+.pr30 {
+  padding-right: 30px;
+}
+.m35 {
+  margin: 35px;
+}
+.p35 {
+  padding: 35px;
+}
+.mt35 {
+  margin-top: 35px;
+}
+.pt35 {
+  padding-top: 35px;
+}
+.mb35 {
+  margin-bottom: 35px;
+}
+.pb35 {
+  padding-bottom: 35px;
+}
+.ml35 {
+  margin-left: 35px;
+}
+.pl35 {
+  padding-left: 35px;
+}
+.mr35 {
+  margin-right: 35px;
+}
+.pr35 {
+  padding-right: 35px;
+}
+.m40 {
+  margin: 40px;
+}
+.p40 {
+  padding: 40px;
+}
+.mt40 {
+  margin-top: 40px;
+}
+.pt40 {
+  padding-top: 40px;
+}
+.mb40 {
+  margin-bottom: 40px;
+}
+.pb40 {
+  padding-bottom: 40px;
+}
+.ml40 {
+  margin-left: 40px;
+}
+.pl40 {
+  padding-left: 40px;
+}
+.mr40 {
+  margin-right: 40px;
+}
+.pr40 {
+  padding-right: 40px;
+}
+.m45 {
+  margin: 45px;
+}
+.p45 {
+  padding: 45px;
+}
+.mt45 {
+  margin-top: 45px;
+}
+.pt45 {
+  padding-top: 45px;
+}
+.mb45 {
+  margin-bottom: 45px;
+}
+.pb45 {
+  padding-bottom: 45px;
+}
+.ml45 {
+  margin-left: 45px;
+}
+.pl45 {
+  padding-left: 45px;
+}
+.mr45 {
+  margin-right: 45px;
+}
+.pr45 {
+  padding-right: 45px;
+}
+.m50 {
+  margin: 50px;
+}
+.p50 {
+  padding: 50px;
+}
+.mt50 {
+  margin-top: 50px;
+}
+.pt50 {
+  padding-top: 50px;
+}
+.mb50 {
+  margin-bottom: 50px;
+}
+.pb50 {
+  padding-bottom: 50px;
+}
+.ml50 {
+  margin-left: 50px;
+}
+.pl50 {
+  padding-left: 50px;
+}
+.mr50 {
+  margin-right: 50px;
+}
+.pr50 {
+  padding-right: 50px;
+}
+.m75 {
+  margin: 75px;
+}
+.p75 {
+  padding: 75px;
+}
+.mt75 {
+  margin-top: 75px;
+}
+.pt75 {
+  padding-top: 75px;
+}
+.mb75 {
+  margin-bottom: 75px;
+}
+.pb75 {
+  padding-bottom: 75px;
+}
+.ml75 {
+  margin-left: 75px;
+}
+.pl75 {
+  padding-left: 75px;
+}
+.mr75 {
+  margin-right: 75px;
+}
+.pr75 {
+  padding-right: 75px;
+}
+.m100 {
+  margin: 100px;
+}
+.p100 {
+  padding: 100px;
+}
+.mt100 {
+  margin-top: 100px;
+}
+.pt100 {
+  padding-top: 100px;
+}
+.mb100 {
+  margin-bottom: 100px;
+}
+.pb100 {
+  padding-bottom: 100px;
+}
+.ml100 {
+  margin-left: 100px;
+}
+.pl100 {
+  padding-left: 100px;
+}
+.mr100 {
+  margin-right: 100px;
+}
+.pr100 {
+  padding-right: 100px;
 }
 /*********************
- COLORS
- *********************/
-/*
- element {
- @include background-opacity(#333, 0.5);
- }
- */
-/*
- .fade {
- @include opacity(.4);
- }
- */
-/*********************
- TYPOGRAPHY
- *********************/
-/*
- @include font-face("MyFont", "path/to/MyFont", $style: normal, $weight: normal)
- */
-/* rem Umwandlung */
-/*
- .demo {
- font-size: rem(24px); // Simple
- padding: rem(5px 10px); // Multiple values
- border-bottom: rem(1px solid black); // Multiple mixed values
- box-shadow: rem(0 0 2px #ccc, inset 0 0 5px #eee); // Comma-separated values
- text-shadow: rem(1px 1px) #eee, rem(-1px) 0 #eee; // Alternate use
- }
- */
-/* breakpoints */
-/*
- .sidebar {
- width: 60%;
- float: left;
- margin: 0 2% 0 0;
- @include bp-small {
- width: 100%;
- float: none;
- margin: 0;
- }
- }	
- */
-/*********************
- CSS3 GRADIENTS.
- *********************/
+CSS3 GRADIENTS
+*********************/
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
-/* order radius */
-/* list reset*/
 /*********************
- Centering
- *********************/
+Border Radius
+*********************/
+/*********************
+BOX SHADOW
+*********************/
+/*********************
+List reset
+*********************/
+/*********************
+ Prefix Property
+*********************/
+/*********************
+Centering hor/vert
+*********************/
 /*
- .parent {
- position: relative;
- }
- .child {
- @include centerer;
- } 
- */
+.foo {
+    @include center(both);
+  }
+  .foo-parent {
+    position: relative;
+  }
+*/
+/*********************
+Fluid Typografie 
+https://css-tricks.com/snippets/css/fluid-typography/
+*********************/
+/*
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+@include fluid-type($min_width, $max_width, $min_font, $max_font);
+*/
 /*--------------------------------------------------------------*/
 /* All SASS Variables */
 /*--------------------------------------------------------------*/
 /*** Colors ***/
+/*** width ***/
 /*** Fonts ***/
 /*
- $mainFont:
- $boldFont: 
- */
-/*** Margin-Padding ***/
+$boldFont: 
+*/
+/*--------------------------------------------------------------*/
+/* Global */
+/*--------------------------------------------------------------*/
+.font-vert {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 1em auto;
+  padding: 0 20px;
+}
+.gold {
+  color: #C5A35B;
+}
 /*--------------------------------------------------------------*/
 /* Layout */
 /*--------------------------------------------------------------*/
 body {
+  background: #000000;
+  font-family: "Noto Serif", serif;
+  color: #fff;
+  font-size: 1.25rem;
+}
+.claim {
+  font-size: 1.5rem;
+  padding: 0 10px;
+  display: inline-block;
+  word-spacing: 25px;
+}
+.claim.left {
+  margin-top: 30vh;
+}
+.claim.sek2 {
+  margin-top: 50vh;
+}
+.claim.sek3 {
+  margin-top: 50vh;
+}
+.content {
+  margin-bottom: 50vh;
+  padding-top: 150px;
+}
+@media only screen and (max-width: 63.9375em) {
+  .content {
+    padding-top: 0px;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 63.9375em) {
+  p.top {
+    display: none;
+  }
+}
+/*********************
+HEADER
+*********************/
+.header {
+  padding: 20px 0 20px;
+  position: fixed;
+  width: 100%;
+  background: #000000;
+}
+@media only screen and (max-width: 63.9375em) {
+  .header {
+    background: transparent;
+    padding: 0;
+  }
+}
+.header .mobileTrigger {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  height: 35px;
+  width: 40px;
+  cursor: pointer;
+  z-index: 500;
+  transition: opacity 0.25s ease;
+}
+@media only screen and (max-width: 39.9375em) {
+  .header .mobileTrigger {
+    right: 10px;
+  }
+}
+.header .mobileTrigger.active .top {
+  transform: translateY(12px) translateX(0) rotate(45deg);
+  background: #C5A35B;
+}
+.header .mobileTrigger.active .middle {
+  opacity: 0;
   background: #fff;
 }
-/*********************
- HEADER
- *********************/
-/*********************
- NAVIGATION
- *********************/
-/*********************
- TYPOGRAFIE
- font-awesome: https://fontawesome.com/how-to-use/web-fonts-with-css#less-and-sass
- *********************/
-h1 {
-  font-size: 3.125rem;
+.header .mobileTrigger.active .bottom {
+  transform: translateY(-12px) translateX(0) rotate(-45deg);
+  background: #C5A35B;
 }
-h2 {
-  font-size: 0.875rem;
-  color: #000;
+.header .mobileTrigger span {
+  background: #C5A35B;
+  border: none;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
 }
-p {
-  margin-bottom: 1.25rem;
+.header .mobileTrigger span:nth-of-type(2) {
+  top: 12px;
 }
-a, a:active, a:hover, a:visited {
-  color: #000;
+.header .mobileTrigger span:nth-of-type(3) {
+  top: 24px;
+}
+/*********************
+NAVIGATION
+*********************/
+@media only screen and (max-width: 63.9375em) {
+  .nav-wrap {
+    background: rgba(0, 0, 0, 0.7);
+    padding-left: 0px;
+    display: none;
+  }
+}
+.nav-wrap .menu {
+  justify-content: center;
+}
+.nav-wrap .menu li a {
+  color: #C5A35B;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+}
+.nav-wrap .menu li a:hover {
+  color: #fff;
   text-decoration: none;
 }
-a:active, a:hover {
-  color: #000;
+@media only screen and (max-width: 63.9375em) {
+  .nav-wrap .menu li a {
+    font-size: 1.25rem;
+  }
 }
-.linkIcon:before {
-  margin-right: 5px;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Font Awesome 5 Pro";
-  font-weight: 300;
-}
-.linkIcon.type_xlsx:before, .linkIcon.type_xls:before {
-  content: "\f1c3";
-}
-.linkIcon.type_docx:before, .linkIcon.type_doc:before {
-  content: "\f1c2";
-}
-.linkIcon.type_pdf:before {
-  content: "\f1c1";
-}
-.linkIcon.type_email:before {
-  content: "\f0e0";
-}
-.linkIcon.type_external:before {
-  content: "\f08e";
+.nav-wrap .menu li.active a {
+  background: transparent;
+  color: #fff;
 }
 /*********************
- SIDEBARS & ASIDES
- *********************/
-.sidebar li {
-  list-style: none;
-}
-.widget ul {
-  margin: 0;
-}
-/*********************
- FOOTER STYLES
- *********************/
-.footer {
-  clear: both;
-  margin-top: 1em;
-}
+FOOTER STYLES
+*********************/
 .to-top {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(197, 163, 91, 0.75);
   display: none;
   z-index: 999;
   position: fixed;
@@ -164,7 +640,7 @@ a:active, a:hover {
   height: 50px;
   text-align: center;
   vertical-align: middle;
-  padding: 10px;
+  padding: 8px 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -172,209 +648,77 @@ a:active, a:hover {
   border-radius: 50%;
 }
 /*********************
- POSTS & CONTENT STYLES
- *********************/
-.page-title .vcard {
-  border: 0px;
-  padding: 0px;
+TYPOGRAFIE
+*********************/
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Serif", serif;
 }
-.byline {
-  color: #999;
+h1 {
+  font-size: 3.125rem;
+  text-transform: uppercase;
+  color: #C5A35B;
+  margin-top: 50px;
+  word-spacing: 40px;
 }
-.entry-content img {
-  max-width: 100%;
-  height: auto;
+@media only screen and (max-width: 63.9375em) {
+  h1 {
+    margin: 0;
+    text-align: left;
+    font-size: 1.875rem;
+    padding-left: 30px;
+    word-spacing: auto;
+  }
 }
-.entry-content .alignleft, .entry-content img.alignleft {
-  margin-right: 1.5em;
-  display: inline;
-  float: left;
+@media only screen and (max-width: 39.9375em) {
+  h1 {
+    padding-top: 10px;
+  }
 }
-.entry-content .alignright, .entry-content img.alignright {
-  margin-left: 1.5em;
-  display: inline;
-  float: right;
+h2 {
+  font-size: 2.125rem;
+  color: #000000;
 }
-.entry-content .aligncenter, .entry-content img.aligncenter {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  clear: both;
+h3 {
+  font-size: 1.5rem;
+  color: #000000;
 }
-.entry-content video, .entry-content object {
-  max-width: 100%;
-  height: auto;
+p {
+  margin-bottom: 1.25rem;
 }
-.entry-content pre {
-  background: #eee;
-  border: 1px solid #cecece;
-  padding: 10px;
+@media only screen and (max-width: 39.9375em) {
+  p {
+    margin-top: 50px;
+  }
 }
-.wp-caption {
-  max-width: 100%;
-  background: #eee;
-  padding: 5px;
-}
-.wp-caption img {
-  max-width: 100%;
-  margin-bottom: 0;
-  width: 100%;
-}
-.wp-caption p.wp-caption-text {
-  font-size: 0.85em;
-  margin: 4px 0 7px;
-  text-align: center;
-}
-.post-password-form input[type="submit"] {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 0 1rem 0;
-  font-family: inherit;
-  padding: 0.85em 1em;
-  -webkit-appearance: none;
-  border: 1px solid transparent;
-  border-radius: 0;
-  transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  font-size: 0.9rem;
-  line-height: 1;
-  text-align: center;
-  cursor: pointer;
-  background-color: #1779ba;
-  color: #fefefe;
-}
-[data-whatinput='mouse'] .post-password-form input[type="submit"] {
-  outline: 0;
-}
-.post-password-form input[type="submit"]:hover, .post-password-form input[type="submit"]:focus {
-  background-color: #14679e;
-  color: #fefefe;
-}
-/*********************
- PAGE NAVI STYLES
- *********************/
-.page-navigation {
-  margin-top: 1rem;
-}
-/*********************
- COMMENT STYLES
- *********************/
-#comments .commentlist {
-  margin-left: 0px;
-}
-#respond ul {
-  margin-left: 0px;
-}
-.commentlist li {
-  position: relative;
-  clear: both;
-  overflow: hidden;
-  list-style-type: none;
-  margin-bottom: 1.5em;
-  padding: 0.7335em 10px;
-}
-.commentlist li:last-child {
-  margin-bottom: 0;
-}
-.commentlist li ul.children {
-  margin: 0;
-}
-.commentlist li[class*=depth-] {
-  margin-top: 1.1em;
-}
-.commentlist li.depth-1 {
-  margin-left: 0;
-  margin-top: 0;
-}
-.commentlist li:not(.depth-1) {
-  margin-left: 10px;
-  margin-top: 0;
-  padding-bottom: 0;
-}
-.commentlist .vcard {
-  margin-left: 50px;
-}
-.commentlist .vcard cite.fn {
-  font-weight: 700;
-  font-style: normal;
-}
-.commentlist .vcard time {
-  float: right;
-}
-.commentlist .vcard time a {
-  color: #999;
+a, a:active, a:hover, a:visited {
+  color: #C5A35B;
   text-decoration: none;
 }
-.commentlist .vcard time a:hover {
+a:active, a:hover {
+  color: #C5A35B;
   text-decoration: underline;
 }
-.commentlist .vcard img.avatar {
+/*********************
+Mobile
+*********************/
+.mobile-wrap .wp-block-column h1 {
+  padding: 0;
+}
+.mobile-wrap .wp-block-column.mob-claim p {
+  margin-top: 10px;
+}
+.pos-rel {
+  position: relative;
+}
+.pos-rel .pos-bottom img {
   position: absolute;
-  left: 10px;
-  padding: 2px;
-  border: 1px solid #cecece;
-  background: #fff;
+  width: 60vw;
+  bottom: 0;
+  z-index: -1;
 }
-.commentlist .comment_content p {
-  margin: 0.7335em 0 1.5em;
-  font-size: 1em;
-  line-height: 1.5em;
+.pos-top img {
+  position: absolute;
+  width: 50vw !important;
+  z-index: -1;
 }
-.commentlist .comment-reply-link {
-  float: right;
-}
-/*********************
- COMMENT FORM STYLES
- *********************/
-.respond-form {
-  margin: 1.5em 10px;
-  padding-bottom: 2.2em;
-}
-.respond-form form {
-  margin: 0.75em 0;
-}
-.respond-form form li {
-  list-style-type: none;
-  clear: both;
-  margin-bottom: 0.7335em;
-}
-.respond-form form li label, .respond-form form li small {
-  display: none;
-}
-.respond-form form input[type=text], .respond-form form input[type=email], .respond-form form input[type=url], .respond-form form textarea {
-  padding: 3px 6px;
-  background: #efefef;
-  border: 2px solid #cecece;
-  line-height: 1.5em;
-}
-.respond-form form input[type=text]:focus, .respond-form form input[type=email]:focus, .respond-form form input[type=url]:focus, .respond-form form textarea:focus {
-  background: #fff;
-}
-.respond-form form input[type=text]:invalid, .respond-form form input[type=email]:invalid, .respond-form form input[type=url]:invalid, .respond-form form textarea:invalid {
-  outline: none;
-  border-color: #fbc2c4;
-  background-color: #f6e7eb;
-  -ms-box-shadow: none;
-  box-shadow: none;
-}
-.respond-form form input[type=text], .respond-form form input[type=email], .respond-form form input[type=url] {
-  max-width: 400px;
-  min-width: 250px;
-}
-.respond-form form textarea {
-  resize: none;
-  width: 97.3%;
-  height: 150px;
-}
-#comment-form-title {
-  margin: 0 0 1.1em;
-}
-#allowed_tags {
-  margin: 1.5em 10px 0.7335em 0;
-}
-.nocomments {
-  margin: 0 20px 1.1em;
-}
-/*********************
- PLUGIN STYLES
- *********************/
 /*# sourceMappingURL=style.css.map */

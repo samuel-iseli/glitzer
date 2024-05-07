@@ -133,19 +133,19 @@ $rem-px-only: false !default;
  BREAKPOINTS (LIKE FOUNDATION)
 *********************/
 
-@mixin bp-large {
+@mixin bp-large { //1200px
   @media only screen and (max-width: 74.9375em) {
     @content;
   }
 }
 
-@mixin bp-medium {
+@mixin bp-medium { // 1024px
   @media only screen and (max-width: 63.9375em) {
     @content;
   }
 }
 
-@mixin bp-small {
+@mixin bp-small { // 640px
   @media only screen and (max-width: 39.9375em) {
     @content;
   }

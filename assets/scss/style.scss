@@ -13,15 +13,60 @@ Stylesheet: Global Stylesheet
 /* Global */
 /*--------------------------------------------------------------*/
 
+.font-vert {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin: 1em auto;
+  padding: 0 20px;
+}
+
+.gold {
+  color: $gold;
+}
+
 
 /*--------------------------------------------------------------*/
 /* Layout */
 /*--------------------------------------------------------------*/
 
 body {
-	background: $weiss;
+	background: $black;
 	font-family: $mainFont;
-  color: $black;
+  color: $weiss;
+  font-size: rem(20px);
+}
+
+.claim {
+  font-size: rem(24px);
+  padding: 0 10px;
+  display: inline-block;
+  word-spacing: 25px;
+  &.left {
+    margin-top: 30vh;
+  }
+  &.sek2 {
+    margin-top: 50vh;
+    
+  }
+  &.sek3 {
+    margin-top: 50vh;
+  }
+
+}
+
+.content {
+  margin-bottom: 50vh;
+  padding-top: 150px;
+  @include bp-medium {
+    padding-top: 0px;
+    margin-bottom: 0;
+  }
+}
+
+p.top {
+  @include bp-medium {
+    display: none;
+  }
 }
 
 
@@ -29,6 +74,66 @@ body {
 HEADER
 *********************/
 .header {
+  padding: 20px 0 20px;
+  position: fixed;
+  width: 100%;
+  background: $black;
+  @include bp-medium {
+    background: $trans;
+    padding: 0;
+  } 
+  .mobileTrigger {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    height: 35px;
+    width: 40px;
+    cursor: pointer;
+    z-index: 500;
+    transition: opacity .25s ease;	
+    @include bp-small {	
+      right: 10px;
+    }	  
+    &:hover {
+     // opacity: .7;
+    }		  
+    &.active {
+      .top {
+        transform: translateY(12px) translateX(0) rotate(45deg);
+        background: $gold;
+      }
+      .middle {
+        opacity: 0;
+        background: $weiss;
+      }
+      
+      .bottom {
+        transform: translateY(-12px) translateX(0) rotate(-45deg);
+        background: $gold;
+      }
+    }
+    
+    span {
+    background: $gold;
+    border: none;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition:  all .35s ease;
+    cursor: pointer;
+      
+      &:nth-of-type(2) {
+        top: 12px;
+      }
+      
+      &:nth-of-type(3) {
+        top: 24px;
+      }
+    }
+  }
+
   
 }
 
@@ -36,14 +141,33 @@ HEADER
 /*********************
 NAVIGATION
 *********************/
-
-.menu {
-  li {
-    a {
-      
-    }
-    &.active {
-      
+.nav-wrap {
+  @include bp-medium {
+    background: rgba($black, .7);
+    padding-left: 0px;
+    display: none;
+  }
+  .menu {
+    justify-content: center;
+    li {
+      a {
+        color: $gold;
+        font-size: rem(20px);
+        text-transform: uppercase;
+        &:hover{
+          color: $weiss;
+          text-decoration: none;
+        }
+        @include bp-medium {
+          font-size: rem(20px);
+        }
+      }
+      &.active {
+        a {
+          background: $trans;
+          color: $weiss;
+        }
+      }
     }
   }
 }
@@ -57,7 +181,7 @@ FOOTER STYLES
 }
 
 .to-top {
-    background-color: rgba(255, 255, 255, 0.75); 
+    background-color: rgba($gold, 0.75); 
     display: none;
     z-index: 999;
     position: fixed;
@@ -67,7 +191,7 @@ FOOTER STYLES
     height: 50px;
     text-align: center;
     vertical-align: middle;
-    padding: 10px;
+    padding: 8px 10px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box; 
@@ -87,6 +211,20 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: rem(50px);
+  text-transform: uppercase;
+  color: $gold;
+  margin-top: 50px;
+  word-spacing: 40px;
+  @include bp-medium {
+    margin: 0;
+    text-align: left;
+	  font-size: rem(30px);  
+    padding-left: 30px;
+    word-spacing: auto;
+  }
+  @include bp-small {
+    padding-top: 10px; 
+  }
 }
 h2 {
 	font-size: rem(34px);
@@ -98,91 +236,58 @@ h3 {
 }
 p {
 	margin-bottom: rem(20px);
+  @include bp-small {
+    margin-top: 50px; 
+  }
 }
+
 
 $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
  
 #{$a-tags} {
-  color: $black;
+  color: $gold;
   text-decoration: none;
 }
 #{$a-tags-hover} {
-  color: $black;
+  color: $gold;
+  text-decoration: underline;
 }
-
-/*
-.linkIcon {
-	&:before{
-		margin-right: 5px;
-	  -webkit-font-smoothing: antialiased;     
-	  font-family: "Font Awesome 5 Pro";
-	  font-weight: 300; 		
-	}
-  &.type_xlsx:before, &.type_xls:before{
-	  content: "\f1c3";
-  }
-  &.type_docx:before, &.type_doc:before{
-	  content: "\f1c2";
-  }
-  &.type_pdf:before{
-	  content: "\f1c1";
-  }
-  &.type_email:before{
-	  content: "\f0e0";
-  }
-  &.type_external:before{
-	  content: "\f08e";
-  }
-}
-*/
-
-// Silbentrennung
-h1, h2, h3, h4, h5, h6, p, ul li {
-  -webkit-hyphens: auto;
-  -webkit-hyphenate-limit-chars: auto 3;
-  -webkit-hyphenate-limit-lines: 4;
-  -ms-hyphens: auto;
-  -ms-hyphenate-limit-chars: auto 3;
-  -ms-hyphenate-limit-lines: 4;
-  hyphens: auto;
-}
-
-/*********************
-SIDEBARS & ASIDES
-*********************/
 
 
 /*********************
-BLOCKS
+Mobile
 *********************/
 
-
-
-
-/*********************
-PLUGIN STYLES
-*********************/
-// Maps
-// siehe auch: https://blog.kulturbanause.de/2014/08/static-google-maps-responsive-design/
-
-.mapWrap {
+.mobile-wrap {
+  .wp-block-column {
+    h1 {
+      padding: 0;
+    }
+    &.mob-claim p{
+      margin-top: 10px;
+    }
+  }
+}
+.pos-rel {
   position: relative;
-  padding-bottom: 56%;
-  height: 0;
-  overflow: hidden;
+  .pos-bottom {
+    img {
+      position: absolute;
+      width: 60vw;
+      bottom: 0;
+      z-index: -1;
+    }
+  }
 }
-
-.mapWrap iframe,
-.mapWrap object,
-.mapWrap embed {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;	
+  
+.pos-top {
+  img {
+    position: absolute;
+    width: 50vw !important;
+    z-index: -1;
+  }
 }
-
 
 
 /*# sourceMappingURL=style.css.map */

@@ -9,7 +9,7 @@ function site_scripts() {
     wp_enqueue_style( 'foundation-css', get_template_directory_uri() . '/foundation-sites/dist/css/foundation.min.css', array(), "6.4.1", 'all' );
      
  		// Backstretch
- //   wp_enqueue_script( 'backstretch', get_template_directory_uri() . '/assets/scripts/jquery.backstretch.min.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts'), false );  
+    wp_enqueue_script( 'onenav', get_template_directory_uri() . '/assets/scripts/jquery.onenav.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts'), false );  
 
 		// Slick JS
  //   wp_enqueue_script( 'slickslider', get_template_directory_uri() . '/assets/scripts/jquery.slick.min.js', array( 'jquery' ), filemtime(get_template_directory() . '/assets/scripts'), false );  
