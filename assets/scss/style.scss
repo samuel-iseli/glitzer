@@ -244,7 +244,9 @@ p {
     margin-top: 50px; 
   }
 }
-
+strong {
+  color: $gold;
+}
 
 $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
