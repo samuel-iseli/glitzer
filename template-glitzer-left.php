@@ -18,11 +18,11 @@ get_header(); ?>
 				<div id="glitzer-left" class="medium-4 large-4 cell show-for-large">
 					<div class="grid-x" style="height:100%">
 						<div class="cell medium-2 large-2"></div>
-						<div class="cell medium-4 large-4">
-							<h1 class="font-vert">Glitzer Effekt</h1>
+						<div class="cell medium-4 large-4 font-vert">
+							<h1>Glitzer Effekt</h1>
 						</div>
-						<div class="cell medium-4 large-4">
-							<h4 class="font-vert" style="margin-top:400px">Gelingende Beziehungen</h4>
+						<div class="cell medium-4 large-4 font-vert">
+							<h4 style="margin-top:400px">Gelingende Beziehungen</h4>
 						</div>
 						<div class="cell medium-2 large-2"></div>
 					</div>
